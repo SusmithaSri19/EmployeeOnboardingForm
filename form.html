@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Onboarding Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Employee Onboarding Form</h2>
+        <form id="onboardingForm" onsubmit="return validateForm()">
+            <label class="form-label">Full Name:</label>
+            <input type="text" id="fullName" class="form-control" required>
+
+            <label class="form-label">Email Address:</label>
+            <input type="email" id="email" class="form-control" required>
+
+            <label class="form-label">Phone Number:</label>
+            <input type="text" id="phone" class="form-control" required>
+
+            <label class="form-label">Date of Birth:</label>
+            <input type="date" id="dob" class="form-control" required>
+
+            <label class="form-label">Position Title:</label>
+            <select id="positionTitle" class="dropdown" required>
+                <option value="">Select</option>
+                <option>PD</option>
+                <option>RTL</option>
+                <option>DV</option>
+                <option>DFT</option>
+                <option>Analog Layout</option>
+                <option>Analog Design</option>
+                <option>EMIR</option>
+                <option>STA</option>
+            </select>
+
+            <label class="form-label">Department:</label>
+            <select id="department" class="dropdown" required> 
+                <option value="">Select</option>
+                <option>HR</option>
+                <option>Engineering</option>
+                <option>Marketing</option>
+                <option>Sales</option>
+                <option>Finance</option>
+            </select>
+
+            <label class="form-label">Start Date:</label>
+            <input type="date" id="startDate" class="form-control" required>
+
+            <label class="form-label">Employee Type:</label>
+            <select id="employeeType" class="dropdown" required>
+                <option value="">Select</option>
+                <option>Full Time</option>
+                <option>Part Time</option>
+                <option>Intern</option>
+            </select>
+
+            <label class="form-label">Present Address:</label>
+            <textarea id="presentAddress" class="form-control" required></textarea>
+
+            <label class="form-label">
+                <input type="checkbox" id="sameAddressCheckbox" onclick="copyAddress()"> Same as Present Address
+            </label>
+
+            <label class="form-label">Permanent Address:</label>
+            <textarea id="permanentAddress" class="form-control" required></textarea>
+
+            <label class="form-label">Mother Tongue:</label>
+            <select id="motherTongue" class="dropdown" required>
+                <option value="">Select</option>
+                <option>Hindi</option>
+                <option>English</option>
+                <option>Telugu</option>
+                <option>Odia</option>
+                <option>Kannada</option>
+                <option>Malayalam</option>
+                <option>Tamil</option>
+                <option>Urdu</option>
+            </select>
+
+            <label class="form-label">Known Languages:</label>
+            <div class="custom-dropdown">
+                <button type="button" id="dropdownButton" onclick="toggleDropdown()">Select Languages</button>
+                <div id="dropdownList" class="dropdown-list">
+                    <label><input type="checkbox" value="Hindi" onclick="updateSelection()"> Hindi</label>
+                    <label><input type="checkbox" value="English" onclick="updateSelection()"> English</label>
+                    <label><input type="checkbox" value="Telugu" onclick="updateSelection()"> Telugu</label>
+                    <label><input type="checkbox" value="Tamil" onclick="updateSelection()"> Tamil</label>
+                    <label><input type="checkbox" value="Malayalam" onclick="updateSelection()"> Malayalam</label>
+                    <label><input type="checkbox" value="Kannada" onclick="updateSelection()"> Kannada</label>
+                    <label><input type="checkbox" value="Urdu" onclick="updateSelection()"> Urdu</label>
+                </div>
+            </div>
+
+            <label class="form-label">Upload Educational Documents:</label>
+            <input type="file" class="form-control" required>
+
+            <label class="form-label">Upload Aadhar Card (Govt. Address Proof):</label>
+            <input type="file" class="form-control" required><br><br>
+
+            <input type="checkbox" id="termsCheckbox" required> I agree to the <a href="#">Terms and Conditions</a>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
